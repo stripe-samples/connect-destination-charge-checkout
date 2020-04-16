@@ -8,7 +8,7 @@ Demo url: https://u4tpz.sse.codesandbox.io/
 Sandbox url: https://codesandbox.io/s/connect-destination-charge-checkout-u4tpz
 (note: the Checkout link won't work in the inline browser on codesandbox.io)
 
-![demo](.readme/checkout.gif)
+![demo](.readme/screenshot.png)
 
 ## How to run locally
 
