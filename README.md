@@ -3,9 +3,9 @@
 This Stripe sample shows you how to process a Connect [destination charge](https://stripe.com/docs/connect/destination-charges) using [Stripe Checkout](https://stripe.com/docs/payments/checkout).
 Before using this sample, you should have onboarded at least one Connect account. For more about onboarding accounts and making Connect charges, read our [step-by-step Connect guide](https://stripe.com/docs/connect/collect-then-transfer-guide#accept-payment).
 
-Demo url: https://u4tpz.sse.codesandbox.io/
+Demo url: https://idxwq.sse.codesandbox.io/
 
-Sandbox url: https://codesandbox.io/s/connect-destination-charge-checkout-u4tpz
+Sandbox url: https://codesandbox.io/s/connect-destination-charge-checkout-idxwq
 (note: the Checkout link won't work in the inline browser on codesandbox.io)
 
 ![demo](.readme/screenshot.png)
