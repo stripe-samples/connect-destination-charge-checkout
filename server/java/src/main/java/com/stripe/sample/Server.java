@@ -87,7 +87,7 @@ public class Server {
 
             ArrayList<HashMap<String, Object>> lineItems = new ArrayList<>();
             HashMap<String, Object> lineItem = new HashMap<String, Object>();
-            lineItem.put("name", "Acoustic guitar");
+            lineItem.put("name", "Guitar lesson");
             lineItem.put("images", images);
             lineItem.put("amount", basePrice);
             lineItem.put("currency", "USD");

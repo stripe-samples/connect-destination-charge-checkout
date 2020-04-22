@@ -40,7 +40,7 @@ var updateQuantity = function (evt) {
 
   document
     .getElementById("submit")
-    .textContent = `Buy for $${total}`;
+    .textContent = `Complete payment $${total}`;
 
   // Disable the button if the customers hits the max or min
   if (quantity === MIN_ITEMS) {

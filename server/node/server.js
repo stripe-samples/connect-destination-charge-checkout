@@ -43,7 +43,7 @@ app.post('/create-checkout-session', async (req, res) => {
     payment_method_types: ['card'],
     line_items: [
       {
-        name: 'Acoustic guitar',
+        name: 'Guitar lesson',
         images: ['https://i.ibb.co/2PNy7yB/guitar.png'],
         quantity: quantity,
         currency: 'USD',

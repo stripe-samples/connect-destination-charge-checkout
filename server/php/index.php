@@ -50,7 +50,7 @@ $app->post('/create-checkout-session', function(Request $request, Response $resp
   $checkout_session = \Stripe\Checkout\Session::create([
     'payment_method_types' => ['card'],
     'line_items' => [[
-      'name' => 'Acoustic guitar',
+      'name' => 'Guitar lesson',
       'images' => ['https://i.ibb.co/2PNy7yB/guitar.png'],
       'quantity' => $quantity,
       'amount' => $base_price,
