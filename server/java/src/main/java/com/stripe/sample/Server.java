@@ -47,6 +47,7 @@ public class Server {
         }
     }
 
+    // Take a 10% cut.
     private static int computeApplicationFeeAmount(Long basePrice, Long quantity) {
         return (int) (basePrice * quantity * 0.1);
     }
@@ -71,7 +72,7 @@ public class Server {
             PostBody postBody = gson.fromJson(request.body(), PostBody.class);
 
             // Create new Checkout Session for the order
-            // For full details see https:#stripe.com/docs/api/checkout/sessions/create
+            // For full details see https://stripe.com/docs/api/checkout/sessions/create
             Map<String, Object> params = new HashMap<String, Object>();
 
             Long basePrice = new Long(dotenv.get("BASE_PRICE"));
