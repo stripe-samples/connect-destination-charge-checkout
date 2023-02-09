@@ -76,7 +76,9 @@ public class Server {
             // For full details see https://stripe.com/docs/api/checkout/sessions/create
             Map<String, Object> params = new HashMap<String, Object>();
 
-            Long basePrice = new Long(dotenv.get("BASE_PRICE"));
+            Price price = Price.retrieve(dotenv.get("BASE_PRICE"));
+            Long basePrice = price.getUnitAmount();
+
             Long quantity = postBody.getQuantity();
             String domainUrl = dotenv.get("DOMAIN");
 
