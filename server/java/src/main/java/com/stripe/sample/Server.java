@@ -27,6 +27,7 @@ import com.stripe.model.EventDataObjectDeserializer;
 import com.stripe.model.checkout.Session;
 import com.stripe.exception.SignatureVerificationException;
 import com.stripe.net.Webhook;
+import com.stripe.model.Price;
 
 public class Server {
     private static Gson gson = new Gson();
@@ -88,13 +89,12 @@ public class Server {
 
             ArrayList<HashMap<String, Object>> lineItems = new ArrayList<>();
             HashMap<String, Object> lineItem = new HashMap<String, Object>();
-            lineItem.put("name", "Guitar lesson");
-            lineItem.put("images", images);
-            lineItem.put("amount", basePrice);
-            lineItem.put("currency", "USD");
+
+            lineItem.put("price", price.getId());
             lineItem.put("quantity", quantity);
             lineItems.add(lineItem);
             params.put("line_items", lineItems);
+            params.put("mode", "payment");
 
             HashMap<String, Object> paymentIntentData = new HashMap<String, Object>();
             paymentIntentData.put("application_fee_amount", computeApplicationFeeAmount(basePrice, quantity));
@@ -132,9 +132,12 @@ public class Server {
             params.put("limit", 10);
             AccountCollection accounts = Account.list(params);
 
+            String basePrice = dotenv.get("BASE_PRICE");
+            Price price = Price.retrieve(basePrice);
+
             Map<String, Object> responseData = new HashMap<>();
             responseData.put("publicKey", dotenv.get("STRIPE_PUBLISHABLE_KEY"));
-            responseData.put("basePrice", dotenv.get("BASE_PRICE"));
+            responseData.put("basePrice", price.getUnitAmount());
             responseData.put("currency", "USD");
             responseData.put("accounts", accounts);
             return gson.toJson(responseData);
